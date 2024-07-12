@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style/signup.css"> <!-- Local CSS link for forms -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script> <!-- Google API -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Google Sign-In JavaScript library -->
+  <script src="script/signup.js" defer></script> <!-- Local signup script -->
+
+  <style>
+    /* Styling for Google Sign-In Button */
+    /* #googleSignInButton { */
+    /* width: 200px; */
+    /* Adjust width as needed */
+    /* height: 40px; */
+    /* Adjust height as needed */
+    /* background-image: url('../assets/images/logo.png'); */
+    /* Replace with actual path to Google logo */
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* cursor: pointer; */
+    /* Set cursor to pointer on hover */
+    /* } */
+
+    /* Optional: Hover effect */
+    /* #googleSignInButton:hover { */
+    /* opacity: 0.8; */
+    /* Reduce opacity on hover */
+    /* } */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>CREATE ACCOUNT</h2>
+    </div>
+    <form class="form" id="signupForm">
+      <p id="errMsg"></p>
+      <p id="sucesMsg"></p>
+
+      <div class="form-control">
+        <input type="text" placeholder="Full Name" id="name" required>
+      </div>
+
+      <div class="form-control">
+        <input type="text" placeholder="Username" id="username" required>
+      </div>
+
+      <div class="form-control">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="form-control">
+        <input type="password" placeholder="Password" id="password" required>
+      </div>
+
+      <div class="form-control">
+        <input type="password" placeholder="Confirm Password" id="confirmpass" required>
+      </div>
+
+      <!-- <button type="submit">Sign Up</button> -->
+      <button type="submit" id="btn" onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+      <div class="line">
+        <hr> or
+        <hr>
+      </div>
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-text="Hello"></div>
+      <div id="googleSignInButton"></div>
+
+    </form>
+  </div>
+
+
+  <script>
+    function initializeGoogleSignIn() {
+      google.accounts.id.initialize({
+        client_id: '487698623372-feg8h2sjvcpgdt0v2q5o629hv7jfibqe.apps.googleusercontent.com', // My Google Client ID
+        callback: handleCredentialResponse
+      });
+
+      // Add the Google Sign-In button to your page
+      google.accounts.id.renderButton(
+        document.getElementById('googleSignInButton'), // The element where the button will be rendered
+        { theme: 'outline', size: 'large' } // Customize the button
+      );
+    }
+
+    function handleCredentialResponse(response) {
+      const jwt = response.credential;
+      // Decode the JWT to get the user's information
+      const user = parseJwt(jwt);
+      console.log(user);
+      // Now you can store this user information in your local storage or backend system
+      // Store user details in localStorage
+      let userDetailsArray = JSON.parse(window.localStorage.getItem("userDetailsArray")) || [];
+      userDetailsArray.push({
+        name: user.name,
+        email: user.email,
+        googleId: user.sub, // Unique ID for Google users
+        profilePic: user.picture // Profile picture URL
+      });
+      window.localStorage.setItem("userDetailsArray", JSON.stringify(userDetailsArray));
+
+      // Redirect to user page
+      window.location.href = 'user.html';
+    }
+
+    function parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
+
+    // Call this function to initialize Google Sign-In when the page loads
+    initializeGoogleSignIn();
+  </script>
+
+  <script src="script/signup.js"></script>
+</body>
+
+</html>
