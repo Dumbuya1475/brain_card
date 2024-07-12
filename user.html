@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Local css link -->
+  <link rel="stylesheet" href="style/colors.css">
+  <link rel="stylesheet" href="style/user.css">
+  <link rel="stylesheet" href="style/user_media.css">
+
+  <!-- box icons link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- google icons link -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <title>User-Page</title>
+</head>
+
+<body class="light-theme">
+  <section id="side-panel" class="side-panel">
+    <div class="side-panel-content">
+      <div class="heading">
+        <button>
+          <i class='bx bx-menu-alt-right' id="close-btn" class="close-btn"></i>
+          MemoryCard
+        </button>
+      </div>
+      <div class="links">
+        <a href="index.html">
+          <i class='bx bxs-home'></i>
+          Home
+        </a>
+      </div>
+
+      <div class="extra">
+        <a href="">
+          <i class='bx bxs-cog'></i>
+          Settings
+        </a>
+        <a href="">
+          <i class='bx bx-support'></i>
+          Supports
+        </a>
+        <a href="">
+          <i class='bx bx-shield-quarter'></i>
+          Privacy
+        </a>
+      </div>
+      <div class="theme">
+        <i class='bx bxs-sun'></i>
+        <button id="theme-toggle"></button>
+      </div>
+
+      <div class="logout">
+        <a href="">
+          <i class='bx bx-log-out'></i>
+          <button onclick="logout()">Logout</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="user-main-content">
+    <header>
+      <div class="action">
+        <div class="container">
+          <i class='bx bx-bell'></i>
+          <div class="profile-container">
+            <div id="profilePicContainer">
+              <!-- <img id="profilePic" src="" alt=""> -->
+            </div>
+            <p id="name">
+          </div>
+        </div>
+        <div class="user-action">
+          <div class="user-info">
+            <!-- <i class='bx bxs-user-circle'></i> -->
+            <!-- <i class='bx bx-menu'></i> -->
+            <div class="profile-greeting">
+              <button id="open-btn" class="open-btn">
+                <i class='bx bx-menu-alt-left'></i>
+              </button>
+              <p>Hi there,</p>
+              <p id="username"> </p>
+              <!-- <small id="userEmail"></small> -->
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <main id="user-main-container">
+      <section class="projects-container">
+        <div class="containers">
+          <div class="container-1">
+            <h2>Available Games</h2>
+            <div class="project-boxes">
+              <div class="project-box">
+                <div class="img-box">
+                  <img src="assets/images/img7.png" alt="">
+                </div>
+                <div class="action-links">
+                  <h4>Memory Card</h4>
+                  <a href="game.html">Play</a>
+                </div>
+              </div>
+              <!-- <div class="project-box">
+                <div class="img-box">
+                  <img src="assets/images/img6.png" alt="">
+                </div>
+                <div class="action-links">
+                  <h4>Memory Card</h4>
+                  <a href="game1.html">Play</a>
+                </div>
+              </div> -->
+              <div class="project-box">
+                <div class="img-box">
+                  <img src="assets/images/img6.png" alt="">
+                </div>
+                <div class="action-links">
+                  <h4>Path Memorizer</h4>
+                  <a href="game1.html">Play</a>
+                </div>
+              </div>
+              <div class="project-box">
+                <div class="img-box">
+                  <img src="assets/images/img6.png" alt="">
+                </div>
+                <div class="action-links">
+                  <h4>Memory Card</h4>
+                  <a href="game1.html">Play</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-2" id="container_2">
+            <div class="feeds-container">
+              <h2>Feeds</h2>
+              <div class="feeds" id="feeds">
+                <div class="container" id="feedsContainer">
+                  <div class="content">
+                    <h5>How to improve brain power</h5>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. At libero aut voluptatem commodi,
+                    </p>
+                  </div>
+                  <div class="content">
+                    <h5>World health day</h5>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. At libero aut voluptatem commodi,
+                    </p>
+                  </div>
+                  <div class="content">
+                    <h5>Causes of mental issues</h5>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. At libero aut voluptatem commodi,
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="trending-container" style="display: none;">
+              <h2>Trending</h2>
+              <div class="content">
+                <img src="" alt="">
+                <div class="text">
+                  @msdumbuya
+                  <span>Super Cool Project</span>
+                </div>
+                <div class="text">
+                  @ahmed
+                  <span>World Peace Builder</span>
+                </div>
+                <div class="text">
+                  @ahmed
+                  <span>World Peace Builder</span>
+                </div>
+                <div class="text">
+                  @ahmed
+                  <span>World Peace Builder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    const toggleThemeButton = document.getElementById('toggleThemeButton');
+    const body = document.body;
+
+    toggleThemeButton.addEventListener('click', () => {
+      body.classList.toggle('dark-theme'); // Toggle between light and dark themes
+    });
+
+  </script>
+  <script src="script/user.js"></script>
+  <script src="script/light_&_dark_mode.js"></script>
+</body>
+
+</html>
