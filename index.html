@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrainCard - Landing page</title>
+  <link rel="icon" href="assets/images/title_img.png">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/media.css">
+  <link rel="stylesheet" href="style/colors.css">
+
+  <!-- Box icons link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- External link for animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="side-panel" class="side-panel">
+    <button id="close-btn" class="close-btn">&times;</button>
+    <div class="logo">BrainCard</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="user.html">Feeds</a></li>
+        <li><a href="signUp.html">Signup</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#footer">Contact</a></li>
+        <li>
+          <div class="theme">
+            <i class='bx bxs-sun' id="theme-toggle"></i>
+            <!-- <button ></button> -->
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="hero" id="hero">
+    <header>
+      <div class="logo">BrainCard</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="login.html">Feeds</a></li>
+          <li><a href="signUp.html">Signup</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#footer">Contact</a></li>
+          <li>
+            <div class="theme">
+              <i class='bx bxs-sun' id="theme-toggle"></i>
+              <!-- <button ></button> -->
+            </div>
+          </li>
+          <div class="profile">
+          </div>
+        </ul>
+
+        <ul>
+          <button class="sidebar-toggle" id="open-btn" onclick="openPanel()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </ul>
+        <!-- <ul>
+          <button class="sidebar-toggle" id="open-btn" onclick="openPanel()">
+            Hello
+          </button>
+        </ul> -->
+      </nav>
+    </header>
+    <div class="hero-body">
+      <div class="hero-text">
+
+        <div class="hero-text">
+          <p data-aos="fade-right" data-aos-offset="200" data-aos-duration="1500">Test your memory skills with Memory
+            Mastery!</p>
+          <h1 data-aos="fade-left" data-aos-offset="200" data-aos-duration="1500">Explore and Excel in Our <span>Memory
+              Games</span>
+          </h1>
+          <p data-aos="fade-right" data-aos-offset="100" data-aos-duration="1500">Dive into fun and challenging games
+            designed to boost your memory and cognitive skills.</p>
+          <div class="cta-button" data-aos="fade" data-aos-offset="200" data-aos-duration="2000">
+            <a href="#">Try Our Games</a>
+            <!-- <span>&UpArrow;</span> -->
+            <!-- <a href="game.html" class="cta-button">Play Memory Card Game</a> -->
+            <!-- <a href="memorize-the-path-game.html" class="cta-button">Play Memorize the Path Game</a> -->
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <main>
+    <section class="about" id="about">
+      <div class="img-box" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <!-- <img src="assets/images/img.png" alt="about-img"> -->
+      </div>
+      <div class="about-text" id="text" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1500">
+        <h2>About</h2>
+        <p>
+          Welcome to the Memory Card Game! Match the pairs and complete the game in the shortest time
+          possible. Challenge yourself with different levels and themes.
+        </p>
+        <!-- <p>Click the buttons above to start playing!</p> -->
+      </div>
+    </section>
+
+    <section class="features" id="features" style="display: none;">
+      <h4>Helo</h4>
+      <div class="img-box" data-aos-offset="300" data-aos-duration="2000">
+        <img src="assets/images/game1.png" alt="about-img" data-aos="fade-right" data-aos-duration="1000">
+        <img src="assets/images/img.png" alt="about-img" data-aos="fade-right" data-aos-duration="1000">
+        <img src="assets/images/img.png" alt="about-img" data-aos="fade-left" data-aos-duration="1000">
+        <img src="assets/images/img.png" alt="about-img" data-aos="fade-left" data-aos-duration="1000">
+      </div>
+      <div class="tagline" id="text" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <!-- <h2>Features</h2> -->
+        <p>
+          <!-- Our different game for your memory -->
+          <!-- The Memory Card Game challenges your memory skills. Memorize card positions and match them in pairs. -->
+        </p>
+        <!-- <p>Explore the games using the buttons in the Hero section!</p> -->
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="img-box" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <img src="assets/images/img8.png" alt="about-img">
+      </div>
+      <div class="about-text" id="text" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1500">
+        <h2>Play in a fun way with our different game mode and levels</h2>
+        <p>
+          Our games come with different game modes and levels (easy, medium, hard)
+        </p>
+        <!-- <p>Click the buttons above to start playing!</p> -->
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="img-box" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <img src="assets/images/img3.png" alt="about-img">
+      </div>
+      <div class="about-text" id="text" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1500">
+        <h2>Challenge yourself with friends and families</h2>
+        <p>
+          See how fast you can remember letters, numbers, objects, and pictures
+        </p>
+        <!-- <p>Click the buttons above to start playing!</p> -->
+      </div>
+    </section>
+
+
+    <section class="container">
+      <div class="img-box" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <img src="assets/images/img2.png" alt="about-img">
+      </div>
+      <div class="about-text" id="text" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1500">
+        <h2>Track your progress</h2>
+        <p>
+          With our leaders score board you will be able to see your past attempt and see how you are improving
+        </p>
+        <!-- <p>Click the buttons above to start playing!</p> -->
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="img-box" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <img src="assets/images/img5.png" alt="about-img">
+      </div>
+      <div class="about-text" id="text" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1500">
+        <h2>Tips and advice for improving you mental health</h2>
+        <p>
+          We often provide feeds on how you can improve your mental health
+        </p>
+        <!-- <p>Click the buttons above to start playing!</p> -->
+      </div>
+    </section>
+
+    <section class="games" id="games" style="display: none;">
+      <div class="img-box" data-aos="fade-right" data-aos-duration="1000">
+        <div class="img">
+          <img src="assets/images/game1.png" alt="about-img">
+          <div class="text">
+            <h3>Memory Card</h3>
+            <p>Match different set of card to win.</p>
+            <a href="game.html">Play Now!</a>
+          </div>
+        </div>
+        <div class="img">
+          <img src="assets/images/img.png" alt="about-img">
+          <div class="text">
+            <h3>Path Memorizer</h3>
+            <p>Memory the card that was display.</p>
+            <a href="game1.html">Play Now!</a>
+          </div>
+        </div>
+        <div class="img">
+          <img src="assets/images/img.png" alt="about-img">
+          <div class="text">
+            <h3>Memory Game</h3>
+            <p>Match the card in the shortest possible time.</p>
+            <a href="">Play Now!</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="tagline" id="text" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500">
+        <h2>Games</h2>
+        <p>
+          Memorize card positions and match them.
+        </p>
+        <!-- <p>Explore the games using the buttons in the Hero section!</p> -->
+      </div>
+    </section>
+
+    <section class="cta-container" id="ctaContainer">
+      <div class="container">
+        <div class="tagline">
+
+          <div id="text">
+            <p>
+              Play our BrainCard game and improve your memory ability.
+            </p>
+            <p>
+              Click this button to test your brain!</p>
+          </div>
+
+          <a href="signUp.html" class="cta-btn">Try Now!</a>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+    <footer id="footer">
+      <div class="footer-body">
+        <div class="contact">
+          <b>Support</b>
+          <i class="bx bx-support"></i>
+        </div>
+
+      </div>
+      <div class="terms">
+        <p>&copy; 2024 BrainCard. All rights reserved.</p>
+        <a href="privacy.html" style="color: #9da0a2;">Privacy Policy</a> |
+        <a href="contact.html" style="color: #9da0a2;">Contact Us</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- External JavaScript for animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- External javascript -->
+  <script src="script/btn_clicks.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.getElementById('theme-toggle');
+      const currentTheme = localStorage.getItem('theme') || 'light';
+
+      // Apply the stored theme on initial load
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      toggleButton.addEventListener('click', () => {
+        let newTheme = 'light';
+
+        // Toggle between light and dark mode
+        if (document.documentElement.getAttribute('data-theme') === 'light') {
+          newTheme = 'dark';
+        }
+
+        // Apply the new theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+
+        // Save the new theme in local storage
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+
+  </script>
+</body>
+
+</html>
