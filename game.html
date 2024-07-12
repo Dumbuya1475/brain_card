@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Card Game</title>
+  <link rel="icon" href="assets/images/title_img.png">
+
+  <!-- game style link -->
+  <link rel="stylesheet" href="style/game.css">
+  <link rel="stylesheet" href="style/tooltip.css">
+  <link rel="stylesheet" href="style/media.css">
+  <link rel="stylesheet" href="style/colors.css">
+  <link rel="stylesheet" href="style/game-media.css">
+  <!-- Box icons link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <section class="game-container">
+    <h1 class="game-title">Memory Card Game</h1>
+    <div class="container">
+      <div class="sub-container">
+        <div class="interactive-btns-1">
+          <div class="tooltip-container-1">
+
+            <!-- dashboard btn -->
+            <h3>My Score</h3>
+            <div class="leaders-board">
+              <ul>
+                <div class="datashow">
+
+                  <!-- <p>Profile</p> -->
+                  <p id="fullname"></p>
+                  <p id="email"></p>
+                  <p id="password" style="display: none;"></p>
+                  <!-- <button id="button" onclick="logout()"> Logout</button> -->
+                </div>
+                <!--
+                <li>Mohamed <span>6 Moves</span></li>
+                <li>Mohamed <span>6 Moves</span></li>
+                <li>Mohamed <span>6 Moves</span></li>
+                <li>Mohamed <span>6 Moves</span></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="game-board-container">
+        <div class="game-board" id="gameBoard">
+          <!-- Cards will be dynamically generated here by the game.js -->
+        </div>
+        <div class="game-info">
+
+          <p>Moves: <span id="movesCount">0</span></p>
+          <button class="restart-button" id="restartButton">
+            Restart Game
+            <i class="bx bx-sync"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="interactive-btns-2">
+        <div class="tooltip-container">
+          <!-- dashboard btn -->
+          <button class="text" id="" onclick="dashboardbtn()">
+            <i class='bx bxs-dashboard' id="tooltip"></i>
+          </button>
+
+          <!-- leaders board btn -->
+          <button class="tooltip2" id="tooltip1">
+            <i class='bx bxs-objects-vertical-bottom'></i>
+            <p>Leaders</p>
+          </button>
+
+          <!-- mute/unmbte btn -->
+          <div id="volume">
+            <button class="tooltip1" id="tooltip2">
+              <!-- <i class='bx bxs-volume-full' id="fullButton"></i> -->
+              <i class='bx bxs-volume-mute'></i>
+              <p>Volume off</p>
+            </button>
+            <!-- mute btn -->
+            <button class="tooltip2" id="tooltip2" onclick="toggleMute()">
+              <i class='bx bxs-volume-full'></i>
+              <!-- <i class='bx bxs-objects-vertical-bottom'></i> -->
+              <p>Volume on</p>
+            </button>
+          </div>
+
+          <!-- game mode btn -->
+          <button class="tooltip3" id="tooltip3" onclick="togglePopUp()">
+            <i class='bx bxs-customize' id="togglePopUp"></i>
+            <p>Game mode</p>
+          </button>
+          <!-- light mode btn -->
+          <button class="tooltip4" id="tooltip4">
+            <i class='bx bxs-sun'></i>
+            <p>Light</p>
+          </button>
+          <!-- dark mode btn -->
+          <button class="tooltip5" id="tooltip5" onclick="togglePopUp()">
+            <i class='bx bxs-moon'></i>
+            <p>Dark</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="tooltip2-filter">
+    </div>
+  </section>
+
+  <section class="pop-up-container" id="popUp">
+    <div class="container">
+      <div class="controls">
+
+        <div class="img-box">
+          <img src="assets/images/double.png" alt="" width="150">
+        </div>
+        <div class="content">
+          <p id="heading">Select Game Mode</p>
+          <!-- buttons in popup container -->
+          <button id="startGameWithAlphabet">Play Game with Alphabet</button>
+          <button id="startGameWithNumbers">Play Game with Numbers</button>
+          <button id="startGameWithImages">Play Game with Your Own Images</button>
+          <button id="startGameWithEmbeddedImages">Play Game with Embedded Images</button>
+          <!-- <button id="startGameWithRandomImages">Play Game with Randomly Generated Images</button> -->
+        </div>
+      </div>
+
+      <div class="upload-section" style="display: none;">
+        <p>Upload beautiful images for the game cards:</p>
+        <p>Note: <span>Number of images must be even (e.g., 2, 4, 6, 8, 10)</span></p>
+        <input type="file" id="imageUpload" multiple accept="image/*" style="display: none;">
+        <div class="select-img-box" id="uploadIcon">
+          <p>Select images</p>
+          <i class='bx bxs-image-add'></i>
+        </div>
+        <div class="save-btn" id="saveBtn">
+          <p>Upload and save</p>
+          <i class='bx bxs-image-add'></i>
+        </div>
+      </div>
+
+      <div id="saveSetting">
+        <button id="closePopup" onclick="closePopUp()">
+          Save and Exit
+        </button>
+      </div>
+      <!-- <div id="uploadPopup"> -->
+      <!-- <button id="closePopup" onclick="closePopUp()"> -->
+      <!-- <p>X</p> -->
+      <!-- <i class="bx bx-sync">X</i> -->
+      <!-- </button> -->
+      <!-- </div> -->
+    </div>
+  </section>
+
+  <!-- Audio element for background music -->
+  <audio id="gameMusic" src="assets/sound/bensound-sunwave.mp3" autoplay loop muted></audio>
+
+  <script>
+
+  </script>
+  <!-- <script src="script/bg_music.js"></script> -->
+  <script src="script/btn_clicks.js"></script>
+  <script src="script/game.js"></script>
+  <script src="script/Prpfile.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.getElementById('theme-toggle');
+      const currentTheme = localStorage.getItem('theme') || 'light';
+
+      // Apply the stored theme on initial load
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      toggleButton.addEventListener('click', () => {
+        let newTheme = 'light';
+
+        // Toggle between light and dark mode
+        if (document.documentElement.getAttribute('data-theme') === 'light') {
+          newTheme = 'dark';
+        }
+
+        // Apply the new theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+
+        // Save the new theme in local storage
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+
+  </script>
+</body>
+
+</html>
