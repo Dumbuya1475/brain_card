@@ -1,0 +1,46 @@
+:root {
+
+	/* --h1-color: #0d1b2aff; */
+	/* --border-color: #98E8CD; */
+
+	/* Light theme */
+	/* --h1-color: #0D1B2A; */
+	/* --span-color: #848E67; */
+	/* --btn-bg: #3259A2ff; */
+	/* --btn-hover-bg: #3571B6; */
+	/* --border-color: #848E67; */
+	/* --second-bg: #0D1B2A; */
+	/* --main-bg: #0d1b2aff; */
+	/* --gray-color: gray; */
+
+	--h1-color: #0D1B2A;
+	--span-color: #848E67;
+	--btn-bg: #3259A2ff;
+	--btn-hover-bg: #3571B6;
+	--second-bg: #fff;
+	--main-bg: #eee;
+	--white-color: #0D1B2A;
+	--gray-color: gray;
+	--border-color: gray;
+	/* --theme-i: var */
+
+	--transition-duration: 0.3s;
+}
+
+[data-theme="dark"] {
+	/* Dark mode colors */
+	--h1-color: #98E8CD;
+	--span-color: #848E67;
+	--btn-bg: #3571B6;
+	--btn-hover-bg: #3571B6;
+	--border-color:#3571B6;
+	--second-bg: #0D1B2A;
+	/* --border-color: #98E8CD; */
+	--main-bg: #020b18;
+	--white-color: #fff;
+
+	/* --main-bg: #0d1b2aff; */
+	/* --main-bg: #020b18; */
+	--white-color: #fff;
+	--gray-color: gray;
+}

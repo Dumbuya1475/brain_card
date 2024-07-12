@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--main-bg);
+	/* display: flex; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	/* height: 100vh; */
+	/* overflow: hidden; */
+	/* width: 100%; */
+}
+
+.container {
+	width: 100%;
+	gap: 200px;
+}
+
+.sub-container {
+	/* position: fixed; */
+	/* right: 0; */
+	/* top: 0; */
+	/* bottom: 0; */
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* justify-content: center; */
+	/* padding: 20px; */
+	/* width: fit-content; */
+}
+.game-board-container{
+  /* background-color: #ccc; */
+}
+
+/* Style for the grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 500px;
+  justify-items: center;
+  /* margin: 20px auto; */
+  /* align-content: center; */
+  box-shadow: 0px 0px 10px var(--border-color);
+}
+
+/* Style for each grid cell */
+.grid-cell {
+  width: 80px;
+  height: 80px;
+  /* box-shadow: 0px 0px 5px var(--border-color); */
+  border: 1px solid var(--border-color);
+  background-color: var(--second-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.grid-cell:hover{
+  background-color: var(--main-bg);
+  box-shadow: 0px 0px 10px var(--border-color);
+  border: 1px solid transparent;
+  /* background-color:red; */
+}
+
+/* Highlighted cell state */
+.grid-cell.active {
+  background-color: green;
+  box-shadow: 0px 0px 10px green;
+}
+
+/* Correct and incorrect feedback styles */
+.grid-cell.correct {
+  background-color: blue;
+  box-shadow: 0px 0px 10px blue;
+}
+
+.grid-cell.incorrect {
+  background-color: red;
+  box-shadow: 0px 0px 10px red;
+}
+
+/* Feedback message styling */
+#feedbackContainer{
+  position: absolute;
+  background-color: transparent;
+  z-index: 0;
+  text-align: center;
+  top:0;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  right: -0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.button-container button{
+  padding: 10px;
+  background-color: var(--btn-bg);
+  /* border: 2px solid var(--border-color); */
+  color: var(--white-color);
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.button-container button:hover{
+  background-color: var(--btn-bg-hover);
+  box-shadow: 0px 0px 5px var(--border-color);
+}
+
+.button-container button:nth-child(1):hover{
+  background-color: skyblue;
+}
+.button-container button:nth-child(2):hover{
+  background-color:yellow;
+}
+.button-container button:nth-child(3):hover{
+  background-color: red;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#feedbackMessage {
+  background-color: var(--white-color);
+  padding: 10px 0;
+  width: fit-content;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+}
