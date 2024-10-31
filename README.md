@@ -127,6 +127,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 If you have any questions or need further information, feel free to contact:
 
-Email: <dumbuya366@gmail.com>
+Email: <bakremayowa2019@gmail.com>
 
-GitHub: Dumbuya1475
+GitHub: bamide
