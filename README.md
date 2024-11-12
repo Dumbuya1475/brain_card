@@ -1,4 +1,4 @@
-# Memory Card Game
+#  Card Game
 
 ![Another Screenshot](./assets/images/Screenshot2.png)
 
