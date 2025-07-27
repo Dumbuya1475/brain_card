@@ -1,4 +1,4 @@
-#  Card Game
+#  Brain Card
 
 ![Another Screenshot](./assets/images/Screenshot2.png)
 
